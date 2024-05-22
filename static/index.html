@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAV Audio Separation</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+        }
+        button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            border-top-color: #000;
+            animation: spin 1s ease-in-out infinite;
+            margin-left: 10px;
+        }
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        #conversion-time {
+            margin-left: 10px;
+            font-size: 14px;
+        }
+        .waveform-container {
+            width: 600px;
+            height: 100px;
+            margin-top: 20px;
+        }
+        .waveform-title {
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+    <script src="https://unpkg.com/wavesurfer.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>WAV Audio Separation</h1>
+        <div class="button-container">
+            <button id="play-button0">Play Original Audio</button>
+            <button id="stop-button0" disabled>Stop Original Audio</button>
+        </div>
+        <div class="button-container">
+            <button id="separate-button">Separate Audio</button>
+            <span id="conversion-time"></span>
+        </div>
+        <div class="button-container">
+            <button id="play-button1" disabled>Play Separated Audio 1</button>
+            <button id="stop-button1" disabled>Stop Separated Audio 1</button>
+        </div>
+        <div class="button-container">
+            <button id="play-button2" disabled>Play Separated Audio 2</button>
+            <button id="stop-button2" disabled>Stop Separated Audio 2</button>
+        </div>
+        <div class="button-container">
+            <button id="play-button3" disabled>Play Separated Audio 3</button>
+            <button id="stop-button3" disabled>Stop Separated Audio 3</button>
+        </div>
+        <div class="waveform-title" id="waveform-title">No audio playing</div>
+        <div id="waveform" class="waveform-container"></div>
+    </div>
+    <script type="module" src="./script.js"></script>
+</body>
+</html>
