@@ -1,6 +1,3 @@
-# rust-wasm-audio-separation-for-lt-sample
-
-
 # Rust-WASM 音声分離サンプル
 
 このプロジェクトは、RustとWebAssembly (WASM) を使用したスピーカー分離の実装例を示します。ブラウザで動作するサンプルアプリケーションで、音声ストリームをスピーカーごとに分離します。
