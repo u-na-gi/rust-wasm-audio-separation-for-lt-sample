@@ -13,13 +13,14 @@ os.chdir(script_dir)
 sample_rate = 44100  # サンプリングレート（Hz）
 duration = 1  # 音声の長さ（秒）
 
+# 複雑な波形を生成
+frequency1 = 120.0  # 周波数1
+frequency2 = 320.0  # 周波数2
+frequency3 = 510.0  # 周波数3
+
 # 時間軸を生成
 t = np.linspace(0, duration, int(sample_rate * duration), endpoint=False)
 
-# 複雑な波形を生成（低い周波数を強調）
-frequency1 = 110.0  # 周波数1（非常に低い音）
-frequency2 = 320.0  # 周波数2（低い音）
-frequency3 = 600.0  # 周波数3（やや低い音）
 
 # 各チャンネルの波形を生成
 wave1 = 0.5 * np.sin(2 * np.pi * frequency1 * t) + 0.3 * np.sin(2 * np.pi * frequency2 * t + np.pi / 4)
